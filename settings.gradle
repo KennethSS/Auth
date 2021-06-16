@@ -1,0 +1,3 @@
+rootProject.name = "AuthActivity"
+include ':app'
+include ':library'
