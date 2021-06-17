@@ -28,9 +28,10 @@ import com.solar.firebase.auth.library.google.GoogleSignInManager
 abstract class AbstractFirebaseAuthActivity : ProgressActivity() {
 
   lateinit var auth: FirebaseAuth
+  lateinit var defaultWebClientId: String
 
   private val callbackManager: CallbackManager by lazy { CallbackManager.Factory.create() }
-  private val googleSignInBuilder: GoogleSignInBuilder by lazy { GoogleSignInBuilder(this) }
+  private val googleSignInBuilder: GoogleSignInBuilder by lazy { GoogleSignInBuilder(this, defaultWebClientId) }
 
   private val facebookSignInManager: FacebookSignInManager by lazy {
     FacebookSignInManager(auth, ::onResultState)

@@ -4,11 +4,10 @@ import android.content.Context
 import android.content.Intent
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.solar.firebase.auth.library.R
 
-class GoogleSignInBuilder(context: Context) {
+class GoogleSignInBuilder(context: Context, defaultWebClientId: String) {
   val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-    .requestIdToken(context.getString(R.string.default_web_client_id))
+    .requestIdToken(defaultWebClientId)
     .requestEmail()
     .build()
 
